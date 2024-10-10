@@ -146,6 +146,8 @@ Summary of Methods:
 
 Each of these methods can be efficient depending on the context in which you're scraping. For server-side scraping, using axios and cheerio is the most efficient in terms of performance and simplicity. However, if you need to handle dynamic content, Puppeteer is more powerful despite being slower due to rendering the full browser environment.
 
+[Another set of instructions to webscraping.](https://www.freecodecamp.org/news/web-scraping-in-javascript-with-puppeteer/)
+
 
 
 
