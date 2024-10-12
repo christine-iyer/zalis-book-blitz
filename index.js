@@ -9,12 +9,24 @@ async function scrapePage() {
         // Load the HTML into cheerio
         const $ = cheerio.load(response.data);
 
-        // Extract data using Cheerio (like jQuery)
-        let quotes = $('.text').map((i, el) => $(el).text()).get(); // Fixed selector for text
-        let authors = $('.author').map((i, el) => $(el).text()).get(); // Fixed selector for authors
+        // Extract quotes and authors
+        const quotesData = $('.quote').map((i, el) => {
+            const quote = $(el).find('.text').text();
+            const author = $(el).find('.author').text();
 
-        console.log('Quotes:', quotes);
-        console.log('Authors:', authors);
+            // Return an object with both quote and author
+            return {
+                quote,
+                author
+            };
+        }).get(); // Convert cheerio object to an array
+
+        // Return quotes and authors inside the cheerio object
+        const cheerioObject = {
+            quotesData
+        };
+
+        console.log(cheerioObject);
     } catch (error) {
         console.error('Error fetching the page:', error);
     }
