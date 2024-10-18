@@ -1,1 +1,1 @@
-print("Hi Listening rn, will call later");
+print("Hi Listening rn, will call later. \nBut you can certainly get started. \nOne of the forist rules is this one: \n'Stop and think!'!")
