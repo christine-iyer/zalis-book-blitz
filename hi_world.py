@@ -7,9 +7,9 @@ with open('quid_data.csv', mode='r') as file:
           letter = row['Letter']
           points=int(row['Points']) 
           quantity= int(row['Quantity'])
-          letter_data[letter] = (points, quantity)
+          letter_data[letter] ={'Points': points, 'Quantity': quantity}
 
-print(letter_data)          
+print(letter_data['W'])          
 
 df = pd.DataFrame.from_dict(letter_data, orient='index', columns=['Points', 'Quantity'])
 
