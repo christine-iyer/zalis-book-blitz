@@ -14,4 +14,4 @@ print(letter_data['W'])
 df = pd.DataFrame.from_dict(letter_data, orient='index', columns=['Points', 'Quantity'])
 
 # Print the DataFrame as a table
-print(df)
+print(df["Quantity"])
