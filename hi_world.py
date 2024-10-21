@@ -30,6 +30,21 @@ random.shuffle(letter_list)
 print("Shuffled letter cards:")
 for card in letter_list:
     print(card)
-hand = {}
-hand = letter_list.pop()
-print(hand)   
+
+    
+handOne = {}
+handTwo = {}
+# handOne = letter_list.pop()
+
+
+  
+
+# handTwo=letter_list.pop()
+
+for i in range(5):
+    handOne=letter_list.pop()  # Deal card to handOne
+    handTwo=letter_list.pop()  # Deal card to handTwo
+print('Hand One')
+print(handOne)
+print('Hand Two')
+print(handTwo)
