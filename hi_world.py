@@ -35,8 +35,11 @@ for card in letter_list:
 handOne = []
 handTwo = []
 
+# gonna want to add an input field. 
+deal = input("Add a number 1-8: ")
+deal = int(deal) + 2
 # Deal 5 cards to each hand
-for i in range(5):
+for i in range(deal):
     handOne.append(letter_list.pop())  # Deal card to handOne
     handTwo.append(letter_list.pop())  # Deal card to handTwo
 
