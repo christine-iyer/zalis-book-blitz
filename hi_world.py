@@ -34,7 +34,7 @@ for card in letter_list:
 # Initialize empty lists to represent each hand
 handOne = []
 handTwo = []
-
+discard = []
 # gonna want to add an input field. 
 deal = input("Add a number 1-8: ")
 deal = int(deal) + 2
@@ -51,3 +51,10 @@ for card in handOne:
 print("Hand Two:")
 for card in handTwo:
     print(card)
+
+print("Dicard Pile: ")
+discard.append(letter_list.pop()) 
+print(card)
+
+# Hand One input a word
+word = input("Enter a word:")
