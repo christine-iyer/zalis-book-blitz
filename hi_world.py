@@ -58,7 +58,7 @@ discard.append(letter_list.pop())
 print(card)
 
 # Hand One input a word
-word = input("Enter a word:")
+word = input("Enter a word:").upper()
 
 
 
@@ -73,4 +73,19 @@ user_input = "apple"
 print(is_english_word(user_input))  # True if word is valid
 
 # 516f08d3-804f-431f-8f03-e85b28a9c241
+
+#summary stats. length of string, string split, verify each letter is in the original set. 
+letter = [x for x in word]
+print(letter)
+print(len(letter))
+print(len(handOne))
+print(len(handOne)- len(letter))
+
+# Extract letters from handOne (only the first element of each tuple)
+handOne_letters = [card[0] for card in handOne]
+
+# Check if all characters in 'word' are in 'handOne_letters'
+result = all(char in handOne_letters for char in word)
+
+print(result) 
 
