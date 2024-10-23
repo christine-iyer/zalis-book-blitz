@@ -2,8 +2,6 @@ import csv
 import pandas as pd
 import random
 import requests
-import nltk
-from nltk.corpus import words
 
 # Initialize letter_data dictionary
 letter_data = {}
@@ -69,22 +67,12 @@ def is_english_word(word):
     
     # Check if the first item in the response is a dictionary (indicating a valid word with definitions)
     if response_json and isinstance(response_json[0], dict):
-        return True  # Word is valid
+        return f"'{word}' is a valid word."
     else:
-        return False  
+        return f"'{word}' is not a valid word."
+
 word = input("Enter a word:").upper()
 
-
-
-# def is_english_word(word):
-#     api_key = '516f08d3-804f-431f-8f03-e85b28a9c241'
-#     url = f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={api_key}"
-#     response = requests.get(url)
-#     # If the word exists, the API returns a list of definitions. Otherwise, it suggests alternatives.
-#     return bool(response.json())
-
-# #this is not properly verifying if it's a word.
-# respod = bool
 print(is_english_word(word))
 print('regarding its validity')
  # True if word is valid
@@ -93,15 +81,15 @@ print('regarding its validity')
 
 #summary stats. length of string, string split, verify each letter is in the original set. 
 letter = [x for x in word]
-print(letter)
-print(len(letter))
-print(len(handOne))
-print(len(handOne)- len(letter))
+print("Letters in word:", letter)
+print("Length of word:", len(letter))
+print("Hand One length:", len(handOne))
+print("Difference:", len(handOne) - len(letter))
 
 handOne_letters = [char for card in handOne for char in card]
 
 # Check if all characters in 'word' are in 'handOne_letters'
 result = all(char in handOne_letters for char in word)
 
-print(word) 
-print(result)
+# Display result of comparison
+print(f"Can '{word}' be formed with the letters in handOne?:", result)
