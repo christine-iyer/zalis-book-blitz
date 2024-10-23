@@ -69,8 +69,8 @@ def is_english_word(word):
     # If the word exists, the API returns a list of definitions. Otherwise, it suggests alternatives.
     return bool(response.json())
 
-user_input = "apple"
-print(is_english_word(user_input))  # True if word is valid
+#this is not properly verifying if it's a word.
+print(is_english_word(word))  # True if word is valid
 
 # 516f08d3-804f-431f-8f03-e85b28a9c241
 
@@ -81,11 +81,10 @@ print(len(letter))
 print(len(handOne))
 print(len(handOne)- len(letter))
 
-# Extract letters from handOne (only the first element of each tuple)
-handOne_letters = [card[0] for card in handOne]
+handOne_letters = [char for card in handOne for char in card]
 
 # Check if all characters in 'word' are in 'handOne_letters'
 result = all(char in handOne_letters for char in word)
 
-print(result) 
-
+print(word) 
+print(result)
