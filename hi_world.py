@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 import random
+import requests
 
 # Initialize letter_data dictionary
 letter_data = {}
@@ -58,3 +59,18 @@ print(card)
 
 # Hand One input a word
 word = input("Enter a word:")
+
+
+
+def is_english_word(word):
+    api_key = '516f08d3-804f-431f-8f03-e85b28a9c241'
+    url = f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={api_key}"
+    response = requests.get(url)
+    # If the word exists, the API returns a list of definitions. Otherwise, it suggests alternatives.
+    return bool(response.json())
+
+user_input = "apple"
+print(is_english_word(user_input))  # True if word is valid
+
+# 516f08d3-804f-431f-8f03-e85b28a9c241
+
