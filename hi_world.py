@@ -36,6 +36,8 @@ for card in letter_list:
 handOne = []
 handTwo = []
 discard = []
+input("do you want to start?")
+
 # gonna want to add an input field. 
 deal = input("Add a number 1-8: ")
 deal = int(deal) + 2
@@ -59,6 +61,7 @@ print(card)
 
 # Hand One input a word
 
+
 def is_english_word(word):
     api_key = '516f08d3-804f-431f-8f03-e85b28a9c241'
     url = f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={api_key}"
@@ -81,6 +84,7 @@ print('regarding its validity')
 
 #summary stats. length of string, string split, verify each letter is in the original set. 
 letter = [x for x in word]
+print("summary stats")
 print("Letters in word:", letter)
 print("Length of word:", len(letter))
 print("Hand One length:", len(handOne))
@@ -92,4 +96,4 @@ handOne_letters = [char for card in handOne for char in card]
 result = all(char in handOne_letters for char in word)
 
 # Display result of comparison
-print(f"Can '{word}' be formed with the letters in handOne?:", result)
+print(f"Can '{word}' be formed with the letters in handOne ,aka,'{result}'?:", result)
