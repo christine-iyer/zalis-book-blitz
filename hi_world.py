@@ -2,6 +2,8 @@ import csv
 import pandas as pd
 import random
 import requests
+import nltk
+from nltk.corpus import words
 
 # Initialize letter_data dictionary
 letter_data = {}
@@ -58,19 +60,34 @@ discard.append(letter_list.pop())
 print(card)
 
 # Hand One input a word
-word = input("Enter a word:").upper()
-
-
 
 def is_english_word(word):
     api_key = '516f08d3-804f-431f-8f03-e85b28a9c241'
     url = f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={api_key}"
     response = requests.get(url)
-    # If the word exists, the API returns a list of definitions. Otherwise, it suggests alternatives.
-    return bool(response.json())
+    response_json = response.json()
+    
+    # Check if the first item in the response is a dictionary (indicating a valid word with definitions)
+    if response_json and isinstance(response_json[0], dict):
+        return True  # Word is valid
+    else:
+        return False  
+word = input("Enter a word:").upper()
 
-#this is not properly verifying if it's a word.
-print(is_english_word(word))  # True if word is valid
+
+
+# def is_english_word(word):
+#     api_key = '516f08d3-804f-431f-8f03-e85b28a9c241'
+#     url = f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={api_key}"
+#     response = requests.get(url)
+#     # If the word exists, the API returns a list of definitions. Otherwise, it suggests alternatives.
+#     return bool(response.json())
+
+# #this is not properly verifying if it's a word.
+# respod = bool
+print(is_english_word(word))
+print('regarding its validity')
+ # True if word is valid
 
 # 516f08d3-804f-431f-8f03-e85b28a9c241
 
