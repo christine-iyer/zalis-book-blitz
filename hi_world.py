@@ -97,3 +97,9 @@ result = all(char in handOne_letters for char in word)
 
 # Display result of comparison
 print(f"Can '{word}' be formed with the letters in handOne ,aka,'{result}'?:", result)
+
+print("Do you have another word to check? Y if yes N if no")
+
+print()
+print()
+print()
