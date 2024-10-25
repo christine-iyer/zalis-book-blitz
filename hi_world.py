@@ -51,6 +51,7 @@ print("Hand One:")
 for card in handOne:
     print(card)
 
+
 print("Hand Two:")
 for card in handTwo:
     print(card)
@@ -77,8 +78,6 @@ def is_english_word(word):
 word = input("Enter a word:").upper()
 
 print(is_english_word(word))
-print('regarding its validity')
- # True if word is valid
 
 # 516f08d3-804f-431f-8f03-e85b28a9c241
 
@@ -87,10 +86,11 @@ letter = [x for x in word]
 print("summary stats")
 print("Letters in word:", letter)
 print("Length of word:", len(letter))
-print("Hand One length:", len(handOne))
-print("Difference:", len(handOne) - len(letter))
+handOneTempLen = [char for char in handOne]
+print("Hand One length:", len(handOneTempLen))
+print("Difference:", len(handOneTempLen) - len(letter))
 
-handOne_letters = [char for card in handOne for char in card]
+handOne_letters = [char for char in handOne]
 
 # Check if all characters in 'word' are in 'handOne_letters'
 result = all(char in handOne_letters for char in word)
@@ -99,7 +99,10 @@ result = all(char in handOne_letters for char in word)
 print(f"Can '{word}' be formed with the letters in handOne ,aka,'{result}'?:", result)
 
 print("Do you have another word to check? Y if yes N if no")
-
-print()
-print()
+txt = "welcome"
+print(txt)
+result = list(txt)
+print(result)
+print(len(txt))
+print(len(result))
 print()
