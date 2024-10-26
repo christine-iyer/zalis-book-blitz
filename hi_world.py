@@ -80,7 +80,13 @@ word = input("Enter a word:").upper()
 print(is_english_word(word))
 
 # 516f08d3-804f-431f-8f03-e85b28a9c241
-
+c = []
+for letter, values in letter_data.items():
+    quantity = values[1]
+    c.extend([letter] * quantity)
+len_c = len(c)
+print("Expanded list c (letters):", c)
+print("Length of c:", len_c)
 #summary stats. length of string, string split, verify each letter is in the original set. 
 letter = [x for x in word]
 print("summary stats")
@@ -105,4 +111,3 @@ result = list(txt)
 print(result)
 print(len(txt))
 print(len(result))
-print()
